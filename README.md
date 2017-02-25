@@ -15,7 +15,7 @@ The idea for this framework came from [an observation from Max Rudberg](http://b
 To add PushDownState to your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "nathan3o4/PushDownState"
+github "nateansel/PushDownState"
 ```
 
 Run `carthage update` to build the framework and drag the built `PushDownState.framework` into your Xcode project.
