@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum DefaultValues {
+internal enum DefaultValues {
 	static let pushDownDuration: TimeInterval = 0.1
 	static let pushDownScale: CGFloat = 0.95
 	static let pushDownRoundCorners: Bool = true
@@ -20,7 +20,6 @@ internal extension UIView {
 		case down
 	}
 }
-
 
 @objc internal protocol PushDownView: class {
 	/// The duration for the push down animation to last. Default value is 0.1
@@ -97,10 +96,12 @@ internal extension PushDownView where Self: UIView {
 	}
 }
 
+// MARK: - UIButton
+
 open class PushDownButton: UIButton, PushDownView {
-	public var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
-	public var pushDownScale: CGFloat = DefaultValues.pushDownScale
-	public var pushDownRoundCorners = DefaultValues.pushDownRoundCorners
+	@IBInspectable public var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
+	@IBInspectable public var pushDownScale: CGFloat = DefaultValues.pushDownScale
+	@IBInspectable public var pushDownRoundCorners = DefaultValues.pushDownRoundCorners
 	internal var originalCornerRadius: CGFloat = 0
 	internal var originalMasksToLayer = false
 	internal var isAnimating = false
@@ -133,9 +134,9 @@ open class PushDownButton: UIButton, PushDownView {
 // MARK: - UITableViewCell
 
 open class PushDownTableViewCell: UITableViewCell, PushDownView {
-	public var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
-	public var pushDownScale: CGFloat = DefaultValues.pushDownScale
-	public var pushDownRoundCorners = DefaultValues.pushDownRoundCorners
+	@IBInspectable public var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
+	@IBInspectable public var pushDownScale: CGFloat = DefaultValues.pushDownScale
+	@IBInspectable public var pushDownRoundCorners = DefaultValues.pushDownRoundCorners
 	internal var originalCornerRadius: CGFloat = 0
 	internal var originalMasksToLayer = false
 	internal var isAnimating = false
