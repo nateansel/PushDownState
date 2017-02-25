@@ -9,13 +9,53 @@
 /* Begin PBXBuildFile section */
 		D89EEFD41E61CE61006458D5 /* PushDownState.h in Headers */ = {isa = PBXBuildFile; fileRef = D89EEFD21E61CE61006458D5 /* PushDownState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D89EEFDB1E61CE83006458D5 /* PushDownState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89EEFDA1E61CE83006458D5 /* PushDownState.swift */; };
+		D89EEFE41E61F391006458D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89EEFE31E61F391006458D5 /* AppDelegate.swift */; };
+		D89EEFE91E61F391006458D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89EEFE71E61F391006458D5 /* Main.storyboard */; };
+		D89EEFEB1E61F391006458D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D89EEFEA1E61F391006458D5 /* Assets.xcassets */; };
+		D89EEFEE1E61F391006458D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89EEFEC1E61F391006458D5 /* LaunchScreen.storyboard */; };
+		D89EEFF51E61F3C4006458D5 /* PushDownState.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89EEFCF1E61CE61006458D5 /* PushDownState.framework */; };
+		D89EEFF61E61F3C4006458D5 /* PushDownState.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D89EEFCF1E61CE61006458D5 /* PushDownState.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D89EEFF91E61F477006458D5 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89EEFF81E61F477006458D5 /* CustomTableViewCell.swift */; };
+		D89EEFFB1E61F829006458D5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89EEFFA1E61F829006458D5 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D89EEFF31E61F3BC006458D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D89EEFC61E61CE61006458D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D89EEFCE1E61CE61006458D5;
+			remoteInfo = PushDownState;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D89EEFF71E61F3C4006458D5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D89EEFF61E61F3C4006458D5 /* PushDownState.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D89EEFCF1E61CE61006458D5 /* PushDownState.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PushDownState.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89EEFD21E61CE61006458D5 /* PushDownState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushDownState.h; sourceTree = "<group>"; };
 		D89EEFD31E61CE61006458D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D89EEFDA1E61CE83006458D5 /* PushDownState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushDownState.swift; sourceTree = "<group>"; };
+		D89EEFE11E61F391006458D5 /* PushDownState Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PushDownState Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D89EEFE31E61F391006458D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D89EEFE81E61F391006458D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D89EEFEA1E61F391006458D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D89EEFED1E61F391006458D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D89EEFEF1E61F391006458D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D89EEFF81E61F477006458D5 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		D89EEFFA1E61F829006458D5 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +66,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D89EEFDE1E61F391006458D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D89EEFF51E61F3C4006458D5 /* PushDownState.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				D89EEFD11E61CE61006458D5 /* PushDownState */,
+				D89EEFE21E61F391006458D5 /* PushDownState Example */,
 				D89EEFD01E61CE61006458D5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				D89EEFCF1E61CE61006458D5 /* PushDownState.framework */,
+				D89EEFE11E61F391006458D5 /* PushDownState Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,11 +98,25 @@
 		D89EEFD11E61CE61006458D5 /* PushDownState */ = {
 			isa = PBXGroup;
 			children = (
-				D89EEFD21E61CE61006458D5 /* PushDownState.h */,
 				D89EEFDA1E61CE83006458D5 /* PushDownState.swift */,
+				D89EEFD21E61CE61006458D5 /* PushDownState.h */,
 				D89EEFD31E61CE61006458D5 /* Info.plist */,
 			);
 			path = PushDownState;
+			sourceTree = "<group>";
+		};
+		D89EEFE21E61F391006458D5 /* PushDownState Example */ = {
+			isa = PBXGroup;
+			children = (
+				D89EEFE31E61F391006458D5 /* AppDelegate.swift */,
+				D89EEFF81E61F477006458D5 /* CustomTableViewCell.swift */,
+				D89EEFFA1E61F829006458D5 /* CustomButton.swift */,
+				D89EEFE71E61F391006458D5 /* Main.storyboard */,
+				D89EEFEA1E61F391006458D5 /* Assets.xcassets */,
+				D89EEFEC1E61F391006458D5 /* LaunchScreen.storyboard */,
+				D89EEFEF1E61F391006458D5 /* Info.plist */,
+			);
+			path = "PushDownState Example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,18 +151,44 @@
 			productReference = D89EEFCF1E61CE61006458D5 /* PushDownState.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		D89EEFE01E61F391006458D5 /* PushDownState Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D89EEFF01E61F391006458D5 /* Build configuration list for PBXNativeTarget "PushDownState Example" */;
+			buildPhases = (
+				D89EEFDD1E61F391006458D5 /* Sources */,
+				D89EEFDE1E61F391006458D5 /* Frameworks */,
+				D89EEFDF1E61F391006458D5 /* Resources */,
+				D89EEFF71E61F3C4006458D5 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D89EEFF41E61F3BC006458D5 /* PBXTargetDependency */,
+			);
+			name = "PushDownState Example";
+			productName = "PushDownState Example";
+			productReference = D89EEFE11E61F391006458D5 /* PushDownState Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D89EEFC61E61CE61006458D5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Nathan Ansel";
 				TargetAttributes = {
 					D89EEFCE1E61CE61006458D5 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = UCUX5A4U9R;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					D89EEFE01E61F391006458D5 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = UCUX5A4U9R;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -109,6 +199,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = D89EEFC51E61CE61006458D5;
 			productRefGroup = D89EEFD01E61CE61006458D5 /* Products */;
@@ -116,6 +207,7 @@
 			projectRoot = "";
 			targets = (
 				D89EEFCE1E61CE61006458D5 /* PushDownState */,
+				D89EEFE01E61F391006458D5 /* PushDownState Example */,
 			);
 		};
 /* End PBXProject section */
@@ -125,6 +217,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D89EEFDF1E61F391006458D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D89EEFEE1E61F391006458D5 /* LaunchScreen.storyboard in Resources */,
+				D89EEFEB1E61F391006458D5 /* Assets.xcassets in Resources */,
+				D89EEFE91E61F391006458D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +241,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D89EEFDD1E61F391006458D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D89EEFF91E61F477006458D5 /* CustomTableViewCell.swift in Sources */,
+				D89EEFE41E61F391006458D5 /* AppDelegate.swift in Sources */,
+				D89EEFFB1E61F829006458D5 /* CustomButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D89EEFF41E61F3BC006458D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D89EEFCE1E61CE61006458D5 /* PushDownState */;
+			targetProxy = D89EEFF31E61F3BC006458D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D89EEFE71E61F391006458D5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D89EEFE81E61F391006458D5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D89EEFEC1E61F391006458D5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D89EEFED1E61F391006458D5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D89EEFD51E61CE61006458D5 /* Debug */ = {
@@ -247,7 +386,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UCUX5A4U9R;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -269,7 +408,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UCUX5A4U9R;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -280,6 +419,36 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.NathanAnsel.PushDownState;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D89EEFF11E61F391006458D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UCUX5A4U9R;
+				INFOPLIST_FILE = "PushDownState Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.NathanAnsel.PushDownState-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D89EEFF21E61F391006458D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UCUX5A4U9R;
+				INFOPLIST_FILE = "PushDownState Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.NathanAnsel.PushDownState-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -304,6 +473,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D89EEFF01E61F391006458D5 /* Build configuration list for PBXNativeTarget "PushDownState Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D89EEFF11E61F391006458D5 /* Debug */,
+				D89EEFF21E61F391006458D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
