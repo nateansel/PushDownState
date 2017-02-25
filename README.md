@@ -1,6 +1,8 @@
 # PushDownState
 The idea for this framework came from [an observation from Max Rudberg](http://blog.maxrudberg.com/post/156814328513/ios-stiffness-the-neglected-touch-down-state). This framework seeks to make his suggestion of buttons in iOS having a “push down state” easier for developers to bring into their own projects.
 
+![Button examples](https://images.typed.com/6ca9aec7-2259-4520-ab88-6bab49470f20/buttons.gif)
+
 ## Requirements
 
 - iOS 8.0+
