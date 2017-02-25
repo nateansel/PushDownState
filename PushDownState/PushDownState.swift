@@ -98,9 +98,9 @@ internal extension PushDownView where Self: UIView {
 }
 
 open class PushDownButton: UIButton, PushDownView {
-	var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
-	var pushDownScale: CGFloat = DefaultValues.pushDownScale
-	var pushDownRoundCorners = DefaultValues.pushDownRoundCorners
+	public var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
+	public var pushDownScale: CGFloat = DefaultValues.pushDownScale
+	public var pushDownRoundCorners = DefaultValues.pushDownRoundCorners
 	internal var originalCornerRadius: CGFloat = 0
 	internal var originalMasksToLayer = false
 	internal var isAnimating = false
@@ -133,9 +133,9 @@ open class PushDownButton: UIButton, PushDownView {
 // MARK: - UITableViewCell
 
 open class PushDownTableViewCell: UITableViewCell, PushDownView {
-	var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
-	var pushDownScale: CGFloat = DefaultValues.pushDownScale
-	var pushDownRoundCorners = DefaultValues.pushDownRoundCorners
+	public var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
+	public var pushDownScale: CGFloat = DefaultValues.pushDownScale
+	public var pushDownRoundCorners = DefaultValues.pushDownRoundCorners
 	internal var originalCornerRadius: CGFloat = 0
 	internal var originalMasksToLayer = false
 	internal var isAnimating = false
