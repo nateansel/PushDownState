@@ -148,3 +148,21 @@ open class PushDownTableViewCell: UITableViewCell, PushDownView {
 		animatePush(toState: toState)
 	}
 }
+
+// MARK: - UICollectionViewCell
+
+open class PushDownCollectionViewCell: UICollectionViewCell, PushDownView {
+	@IBInspectable public var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
+	@IBInspectable public var pushDownScale: CGFloat = DefaultValues.pushDownScale
+	@IBInspectable public var pushDownRoundCorners = DefaultValues.pushDownRoundCorners
+	internal var originalCornerRadius: CGFloat = 0
+	internal var originalMasksToLayer = false
+	internal var isAnimating = false
+	internal var animationsToComplete: (()->())?
+	
+	open override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+		super.setHighlighted(highlighted, animated: animated)
+		let toState: PushState = highlighted ? .down : .up
+		animatePush(toState: toState)
+	}
+}
