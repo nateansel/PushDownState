@@ -159,10 +159,11 @@ open class PushDownCollectionViewCell: UICollectionViewCell, PushDownView {
 	internal var originalMasksToLayer = false
 	internal var isAnimating = false
 	internal var animationsToComplete: (()->())?
-	
-	open override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-		super.setHighlighted(highlighted, animated: animated)
-		let toState: PushState = highlighted ? .down : .up
-		animatePush(toState: toState)
-	}
+  
+  open override var isHighlighted: Bool {
+    didSet {
+      let toState: PushState = isHighlighted ? .down : .up
+      animatePush(toState: toState)
+    }
+  }
 }
