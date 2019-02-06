@@ -69,7 +69,7 @@ internal extension PushDownView where Self: UIView {
 				if originalCornerRadius < 8 {
 					layer.masksToBounds = originalMasksToLayer
 					let animation = CABasicAnimation(keyPath: "cornerRadius")
-					animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+					animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 					animation.fromValue = layer.cornerRadius
 					animation.toValue = originalCornerRadius
 					animation.duration = pushDownDuration
@@ -84,7 +84,7 @@ internal extension PushDownView where Self: UIView {
 				if originalCornerRadius < 8 {
 					layer.masksToBounds = true
 					let animation = CABasicAnimation(keyPath: "cornerRadius")
-					animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+					animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 					animation.fromValue = layer.cornerRadius
 					animation.toValue = 8
 					animation.duration = pushDownDuration
@@ -159,11 +159,12 @@ open class PushDownCollectionViewCell: UICollectionViewCell, PushDownView {
 	internal var originalMasksToLayer = false
 	internal var isAnimating = false
 	internal var animationsToComplete: (()->())?
-  
-  open override var isHighlighted: Bool {
-    didSet {
-      let toState: PushState = isHighlighted ? .down : .up
-      animatePush(toState: toState)
-    }
-  }
+	
+	open override var isHighlighted: Bool {
+		didSet {
+			let toState: PushState = isHighlighted ? .down : .up
+			animatePush(toState: toState)
+		}
+	}
 }
+
