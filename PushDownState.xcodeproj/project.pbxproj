@@ -80,8 +80,8 @@
 		D89EEFC51E61CE61006458D5 = {
 			isa = PBXGroup;
 			children = (
-				D89EEFD11E61CE61006458D5 /* PushDownState */,
-				D89EEFE21E61F391006458D5 /* PushDownState Example */,
+				D89EEFD11E61CE61006458D5 /* Source */,
+				D89EEFE21E61F391006458D5 /* Example */,
 				D89EEFD01E61CE61006458D5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,17 +95,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D89EEFD11E61CE61006458D5 /* PushDownState */ = {
+		D89EEFD11E61CE61006458D5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				D89EEFDA1E61CE83006458D5 /* PushDownState.swift */,
 				D89EEFD21E61CE61006458D5 /* PushDownState.h */,
 				D89EEFD31E61CE61006458D5 /* Info.plist */,
 			);
-			path = PushDownState;
+			path = Source;
 			sourceTree = "<group>";
 		};
-		D89EEFE21E61F391006458D5 /* PushDownState Example */ = {
+		D89EEFE21E61F391006458D5 /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				D89EEFE31E61F391006458D5 /* AppDelegate.swift */,
@@ -116,7 +116,7 @@
 				D89EEFEC1E61F391006458D5 /* LaunchScreen.storyboard */,
 				D89EEFEF1E61F391006458D5 /* Info.plist */,
 			);
-			path = "PushDownState Example";
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,6 +481,7 @@
 				D89EEFF21E61F391006458D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
