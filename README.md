@@ -27,9 +27,9 @@ To use PushDownState in any file of your project, first
 import PushDownState
 ```
 
-To add a push down state to UIButtons and UITableViewCells, simply subclass either `PushDownButton` or `PushDownTableViewCell`. A push down state will automatically be added to the UI element.
+To add a push down state to UIButtons, UITableViewCells, and UICollectionViewCells, simply subclass either `PushDownButton`, `PushDownTableViewCell`, or `PushDownCollectionViewCell`. A push down state will automatically be added to the UI element.
 
-To fine tune the push down state for buttons or cells, simply edit the three values that you have access to. These values are all `@IBInspectable`, so they can be changed in your storyboard or xib files.
+To fine tune the push down state for buttons or cells, simply edit the four values that you have access to. These values are all `@IBInspectable`, so they can be changed in your storyboard or xib files.
 
 Currently, you can edit:
 
@@ -37,11 +37,12 @@ Currently, you can edit:
 var pushDownDuration: TimeInterval
 var pushDownScale: CGFloat
 var pushDownRoundCorners: Bool
+var pushDownBackgroundColor: UIColor?
 ```
 
 ## Todo
 
-- [ ] Add background color manipulation
+- [x] Add background color manipulation
 - [ ] Add support for additional changes in the push down state
 
 ## License
