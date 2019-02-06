@@ -25,14 +25,20 @@ internal extension UIView {
 	/// The duration for the push down animation to last. Default value is 0.1
 	/// seconds.
 	var pushDownDuration: TimeInterval { get set }
+	
 	/// The scale for the push down effect to take. Default value is 0.95.
 	/// Values should be a percent between 0.0 and 1.0.
 	var pushDownScale: CGFloat { get set }
+	
 	/// Whether or not the corners of the UIView should be rounded. If true, the
 	/// corners will be rounded to a value of 8. If the corners are already
 	/// rounded to a value greater than 8, the corner radius will not change.
 	/// Default value is true.
 	var pushDownRoundCorners: Bool { get set }
+	
+	var pushDownBackgroundColor: UIColor? { get set }
+	
+	var originalBackgroundColor: UIColor? { get set }
 	var originalCornerRadius: CGFloat { get set }
 	var originalMasksToLayer: Bool { get set }
 	var isAnimating: Bool { get set }
@@ -64,7 +70,10 @@ internal extension PushDownView where Self: UIView {
 	func snapPush(toState: PushState) {
 		switch toState {
 		case .up:
-			self.transform = CGAffineTransform.identity
+			transform = CGAffineTransform.identity
+			if let _ = pushDownBackgroundColor {
+				backgroundColor = originalBackgroundColor
+			}
 			if pushDownRoundCorners {
 				if originalCornerRadius < 8 {
 					layer.masksToBounds = originalMasksToLayer
@@ -78,7 +87,11 @@ internal extension PushDownView where Self: UIView {
 				}
 			}
 		case .down:
-			self.transform = CGAffineTransform.identity.scaledBy(x: pushDownScale, y: pushDownScale)
+			transform = CGAffineTransform.identity.scaledBy(x: pushDownScale, y: pushDownScale)
+			originalBackgroundColor = backgroundColor
+			if let color = pushDownBackgroundColor {
+				backgroundColor = color
+			}
 			if pushDownRoundCorners {
 				originalCornerRadius = layer.cornerRadius
 				if originalCornerRadius < 8 {
@@ -102,6 +115,8 @@ open class PushDownButton: UIButton, PushDownView {
 	@IBInspectable public var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
 	@IBInspectable public var pushDownScale: CGFloat = DefaultValues.pushDownScale
 	@IBInspectable public var pushDownRoundCorners = DefaultValues.pushDownRoundCorners
+	@IBInspectable public var pushDownBackgroundColor: UIColor?
+	internal var originalBackgroundColor: UIColor?
 	internal var originalCornerRadius: CGFloat = 0
 	internal var originalMasksToLayer = false
 	internal var isAnimating = false
@@ -137,6 +152,8 @@ open class PushDownTableViewCell: UITableViewCell, PushDownView {
 	@IBInspectable public var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
 	@IBInspectable public var pushDownScale: CGFloat = DefaultValues.pushDownScale
 	@IBInspectable public var pushDownRoundCorners = DefaultValues.pushDownRoundCorners
+	@IBInspectable public var pushDownBackgroundColor: UIColor?
+	internal var originalBackgroundColor: UIColor?
 	internal var originalCornerRadius: CGFloat = 0
 	internal var originalMasksToLayer = false
 	internal var isAnimating = false
@@ -155,6 +172,8 @@ open class PushDownCollectionViewCell: UICollectionViewCell, PushDownView {
 	@IBInspectable public var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
 	@IBInspectable public var pushDownScale: CGFloat = DefaultValues.pushDownScale
 	@IBInspectable public var pushDownRoundCorners = DefaultValues.pushDownRoundCorners
+	@IBInspectable public var pushDownBackgroundColor: UIColor?
+	internal var originalBackgroundColor: UIColor?
 	internal var originalCornerRadius: CGFloat = 0
 	internal var originalMasksToLayer = false
 	internal var isAnimating = false

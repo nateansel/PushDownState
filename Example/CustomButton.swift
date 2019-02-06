@@ -10,19 +10,13 @@ import UIKit
 import PushDownState
 
 class CustomButton: PushDownButton {
-	override var isHighlighted: Bool {
-		didSet {
-			changeColors(highlighted: isHighlighted)
-		}
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		self.pushDownBackgroundColor = .groupTableViewBackground
 	}
 	
-	private func changeColors(highlighted: Bool) {
-		UIView.animate(withDuration: pushDownDuration) { [unowned self] in
-			if highlighted {
-				self.backgroundColor = .groupTableViewBackground
-			} else {
-				self.backgroundColor = nil
-			}
-		}
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		self.pushDownBackgroundColor = .groupTableViewBackground
 	}
 }
