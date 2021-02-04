@@ -12,20 +12,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EAFCEA3D25CB8A51003129B4 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		EAFCEA3E25CB8A51003129B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EAFCEA4025CB8A51003129B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EAFCEA4225CB8A51003129B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EAFCEA4325CB8A51003129B4 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		EAFCEA4425CB8A51003129B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EAFCEA4525CB8A51003129B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		OBJ_10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		OBJ_11 /* PushDownState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDownState.swift; sourceTree = "<group>"; };
 		OBJ_15 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		OBJ_16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* PushDownState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushDownState.h; sourceTree = "<group>"; };
-		"PushDownState::PushDownState::Product" /* PushDownState.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushDownState.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"PushDownState::PushDownState::Product" /* PushDownState.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushDownState.framework; path = /Users/nikhilmenon/Projects/PushDownState/build/Debug/PushDownState.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,21 +39,6 @@
 			name = PushDownStateTests;
 			sourceTree = "<group>";
 		};
-		EAFCEA3C25CB8A51003129B4 /* Example */ = {
-			isa = PBXGroup;
-			children = (
-				EAFCEA3D25CB8A51003129B4 /* CustomButton.swift */,
-				EAFCEA3E25CB8A51003129B4 /* Assets.xcassets */,
-				EAFCEA3F25CB8A51003129B4 /* LaunchScreen.storyboard */,
-				EAFCEA4125CB8A51003129B4 /* Main.storyboard */,
-				EAFCEA4325CB8A51003129B4 /* CustomTableViewCell.swift */,
-				EAFCEA4425CB8A51003129B4 /* AppDelegate.swift */,
-				EAFCEA4525CB8A51003129B4 /* Info.plist */,
-			);
-			name = Example;
-			path = "../../Downloads/PushDownState-master/Example";
-			sourceTree = "<group>";
-		};
 		OBJ_12 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,22 +47,12 @@
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_13 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				"PushDownState::PushDownState::Product" /* PushDownState.framework */,
-			);
-			name = Products;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
-				EAFCEA3C25CB8A51003129B4 /* Example */,
 				OBJ_7 /* Sources */,
 				OBJ_12 /* Tests */,
-				OBJ_13 /* Products */,
 				OBJ_15 /* LICENSE */,
 				OBJ_16 /* README.md */,
 			);
@@ -160,7 +128,7 @@
 				Base,
 			);
 			mainGroup = OBJ_5;
-			productRefGroup = OBJ_13 /* Products */;
+			productRefGroup = OBJ_5;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -188,25 +156,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		EAFCEA3F25CB8A51003129B4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EAFCEA4025CB8A51003129B4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		EAFCEA4125CB8A51003129B4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EAFCEA4225CB8A51003129B4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		OBJ_19 /* Debug */ = {
