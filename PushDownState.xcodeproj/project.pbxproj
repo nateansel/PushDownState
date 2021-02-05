@@ -12,13 +12,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA9BC4A025CCDBCB00B61A7C /* PushDownState.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PushDownState.framework; path = /Users/nikhilmenon/Projects/PushDownState/build/Debug/PushDownState.framework; sourceTree = "<absolute>"; };
 		OBJ_10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		OBJ_11 /* PushDownState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDownState.swift; sourceTree = "<group>"; };
 		OBJ_15 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		OBJ_16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* PushDownState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushDownState.h; sourceTree = "<group>"; };
-		"PushDownState::PushDownState::Product" /* PushDownState.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushDownState.framework; path = /Users/nikhilmenon/Projects/PushDownState/build/Debug/PushDownState.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 			);
 			name = PushDownState;
 			productName = PushDownState;
-			productReference = "PushDownState::PushDownState::Product" /* PushDownState.framework */;
+			productReference = EA9BC4A025CCDBCB00B61A7C /* PushDownState.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		"PushDownState::SwiftPMPackageDescription" /* PushDownStatePackageDescription */ = {
