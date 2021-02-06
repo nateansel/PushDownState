@@ -5,9 +5,9 @@ The idea for this framework came from [an observation from Max Rudberg](http://b
 
 ## Requirements
 
-- iOS 8.0+
-- Xcode 8.1+
-- Swift 3.0+
+- iOS 9.0+
+- Xcode 11.0+
+- Swift 5.0+
 
 ## Installation
 
@@ -19,6 +19,14 @@ github "nateansel/PushDownState"
 ```
 
 Run `carthage update` to build the framework and drag the built `PushDownState.framework` into your Xcode project.
+
+### Swift Package Manager
+*note: Swift Package Manager Support requires Swift 5.3*
+
+1. Navigate to project settings
+2. Go to Swift Packages Tap
+3. Add repository URL
+4. Set version rules to `spm_support` branch.
 
 ## Usage
 To use PushDownState in any file of your project, first

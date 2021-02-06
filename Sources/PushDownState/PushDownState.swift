@@ -12,6 +12,8 @@ internal enum DefaultValues {
 	static let pushDownDuration: TimeInterval = 0.1
 	static let pushDownScale: CGFloat = 0.95
 	static let pushDownRoundCorners: Bool = true
+    /// The value of the corner radius when a PushDownButton is pushed
+    static let pushedCornerRadius: CGFloat = 8
 }
 
 internal extension UIView {
@@ -45,6 +47,8 @@ internal extension UIView {
 	var animationsToComplete: (()->())? { get set }
 }
 
+// MARK: - Animations
+
 internal extension PushDownView where Self: UIView {
 	func animatePush(toState: UIView.PushState) {
 		if !isAnimating {
@@ -55,7 +59,8 @@ internal extension PushDownView where Self: UIView {
 				options: .curveEaseInOut,
 				animations: { [weak self] in
 					self?.snapPush(toState: toState)
-				}, completion: { [weak self] _ in
+				},
+                completion: { [weak self] _ in
 					self?.isAnimating = false
 					self?.animationsToComplete?()
 					self?.animationsToComplete = nil
@@ -68,6 +73,8 @@ internal extension PushDownView where Self: UIView {
 	}
 	
 	func snapPush(toState: PushState) {
+        let pushedCornerRadius = DefaultValues.pushedCornerRadius
+        
 		switch toState {
 		case .up:
 			transform = CGAffineTransform.identity
@@ -75,7 +82,7 @@ internal extension PushDownView where Self: UIView {
 				backgroundColor = originalBackgroundColor
 			}
 			if pushDownRoundCorners {
-				if originalCornerRadius < 8 {
+                if originalCornerRadius < pushedCornerRadius {
 					layer.masksToBounds = originalMasksToLayer
 					let animation = CABasicAnimation(keyPath: "cornerRadius")
 					animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
@@ -94,15 +101,15 @@ internal extension PushDownView where Self: UIView {
 			}
 			if pushDownRoundCorners {
 				originalCornerRadius = layer.cornerRadius
-				if originalCornerRadius < 8 {
+                if originalCornerRadius < pushedCornerRadius {
 					layer.masksToBounds = true
 					let animation = CABasicAnimation(keyPath: "cornerRadius")
 					animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 					animation.fromValue = layer.cornerRadius
-					animation.toValue = 8
+                    animation.toValue = pushedCornerRadius
 					animation.duration = pushDownDuration
 					layer.add(animation, forKey: animation.keyPath)
-					layer.cornerRadius = 8
+					layer.cornerRadius = pushedCornerRadius
 				}
 			}
 		}
