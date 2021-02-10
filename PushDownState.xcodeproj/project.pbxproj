@@ -19,8 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EA9BC4A025CCDBCB00B61A7C /* PushDownState.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PushDownState.framework; path = /Users/nikhilmenon/Projects/PushDownState/build/Debug/PushDownState.framework; sourceTree = "<absolute>"; };
-		EA9BC4AA25CCDD5300B61A7C /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9BC4AC25CCDD5300B61A7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA9BC4AE25CCDD5300B61A7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EA9BC4B325CCDD5300B61A7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,6 +27,9 @@
 		EA9BC4BA25CCDD5400B61A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA9BC4C325CCDEAE00B61A7C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		EA9BC4CC25CCDF2000B61A7C /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		EAB461FD25D49BA5009117F9 /* PushDownState.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PushDownState.framework; path = /Users/nikhilmenon/Projects/PushDownState/build/Debug/PushDownState.framework; sourceTree = "<absolute>"; };
+		EAB4621625D49DDE009117F9 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAB4621A25D49E24009117F9 /* PushDownState.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushDownState.framework; path = "../../Library/Developer/Xcode/DerivedData/PushDownState-djrwuqkjdxqvofegynomtkpgwexe/Build/Products/Debug-iphonesimulator/PushDownState.framework"; sourceTree = "<group>"; };
 		OBJ_10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		OBJ_11 /* PushDownState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDownState.swift; sourceTree = "<group>"; };
 		OBJ_15 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -58,6 +59,14 @@
 		EA9BC4AB25CCDD5300B61A7C /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				EAB4620125D49BEA009117F9 /* PushDownStateExample */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		EAB4620125D49BEA009117F9 /* PushDownStateExample */ = {
+			isa = PBXGroup;
+			children = (
 				EA9BC4AC25CCDD5300B61A7C /* AppDelegate.swift */,
 				EA9BC4AE25CCDD5300B61A7C /* SceneDelegate.swift */,
 				EA9BC4C325CCDEAE00B61A7C /* CustomTableViewCell.swift */,
@@ -67,7 +76,15 @@
 				EA9BC4B725CCDD5400B61A7C /* LaunchScreen.storyboard */,
 				EA9BC4BA25CCDD5400B61A7C /* Info.plist */,
 			);
-			path = Example;
+			path = PushDownStateExample;
+			sourceTree = "<group>";
+		};
+		EAB4621125D49DAA009117F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAB4621A25D49E24009117F9 /* PushDownState.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EAFCE9F425CB8359003129B4 /* PushDownStateTests */ = {
@@ -93,8 +110,9 @@
 				OBJ_12 /* Tests */,
 				OBJ_15 /* LICENSE */,
 				OBJ_16 /* README.md */,
-				EA9BC4AA25CCDD5300B61A7C /* Example.app */,
 				EA9BC4AB25CCDD5300B61A7C /* Example */,
+				EAB4621125D49DAA009117F9 /* Frameworks */,
+				EAB4621625D49DDE009117F9 /* Example.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,7 +152,7 @@
 			);
 			name = Example;
 			productName = Example;
-			productReference = EA9BC4AA25CCDD5300B61A7C /* Example.app */;
+			productReference = EAB4621625D49DDE009117F9 /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 		"PushDownState::PushDownState" /* PushDownState */ = {
@@ -150,7 +168,7 @@
 			);
 			name = PushDownState;
 			productName = PushDownState;
-			productReference = EA9BC4A025CCDBCB00B61A7C /* PushDownState.framework */;
+			productReference = EAB461FD25D49BA5009117F9 /* PushDownState.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		"PushDownState::SwiftPMPackageDescription" /* PushDownStatePackageDescription */ = {
@@ -316,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Example/Info.plist;
+				INFOPLIST_FILE = Example/PushDownStateExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -376,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Example/Info.plist;
+				INFOPLIST_FILE = Example/PushDownStateExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
