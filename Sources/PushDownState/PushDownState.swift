@@ -10,17 +10,25 @@ import UIKit
 
 internal enum DefaultValues {
 	static let pushDownDuration: TimeInterval = 0.1
+    /// The scale effect value for pushdown animations.
 	static let pushDownScale: CGFloat = 0.95
+    /// Default toggle for round corner effect.
 	static let pushDownRoundCorners: Bool = true
+    /// The value of the corner radius when a PushDownButton is pushed
+    static let pushedCornerRadius: CGFloat = 8
 }
 
 internal extension UIView {
+    /// State that represents if a view is in a "pressed" or "unpressed" position.
 	enum PushState {
+        /// Indicateds the view is not pressed.
 		case up
+        /// Indicates the view is pressed.
 		case down
 	}
 }
 
+/// Protocol that introduces requirements for animating push down button presses.
 @objc internal protocol PushDownView: class {
 	/// The duration for the push down animation to last. Default value is 0.1
 	/// seconds.
@@ -36,16 +44,30 @@ internal extension UIView {
 	/// Default value is true.
 	var pushDownRoundCorners: Bool { get set }
 	
-	var pushDownBackgroundColor: UIColor? { get set }
-	
+    /// The background color of the view when a view is pressed.
+    var pushDownBackgroundColor: UIColor? { get set }
+    
+    /// The original background color of the view when the view is not pressed.
 	var originalBackgroundColor: UIColor? { get set }
+    
+    /// The original corner radius of the view when the view is not pressed.
 	var originalCornerRadius: CGFloat { get set }
+    
+    /// Original masks to layer
 	var originalMasksToLayer: Bool { get set }
+    
+    /// The toggle set for animations on a `PushDownView`.
 	var isAnimating: Bool { get set }
+    
+    /// Closure that performs additional animations
 	var animationsToComplete: (()->())? { get set }
 }
 
+// MARK: - Animations
+
 internal extension PushDownView where Self: UIView {
+    
+    /// Animates a pushdown effect to the given state.
 	func animatePush(toState: UIView.PushState) {
 		if !isAnimating {
 			isAnimating = true
@@ -55,7 +77,8 @@ internal extension PushDownView where Self: UIView {
 				options: .curveEaseInOut,
 				animations: { [weak self] in
 					self?.snapPush(toState: toState)
-				}, completion: { [weak self] _ in
+				},
+                completion: { [weak self] _ in
 					self?.isAnimating = false
 					self?.animationsToComplete?()
 					self?.animationsToComplete = nil
@@ -67,17 +90,26 @@ internal extension PushDownView where Self: UIView {
 		}
 	}
 	
+    /// Performs animation to reach the given Push state.
+    /// - Animations Performed:
+    ///     -  Changes background color if the `pushDownBackgroundColor` is set for the PushDownView.
+    ///     - `easeInEaseOut` animation on the corner radius if the `pushDownRoundCorners` toggle is set to `true`.
 	func snapPush(toState: PushState) {
+        let pushedCornerRadius = DefaultValues.pushedCornerRadius
+        let animationKeyPath = "cornerRadius"
+        
 		switch toState {
 		case .up:
 			transform = CGAffineTransform.identity
+            
 			if let _ = pushDownBackgroundColor {
 				backgroundColor = originalBackgroundColor
 			}
+            
 			if pushDownRoundCorners {
-				if originalCornerRadius < 8 {
+                if originalCornerRadius < pushedCornerRadius {
 					layer.masksToBounds = originalMasksToLayer
-					let animation = CABasicAnimation(keyPath: "cornerRadius")
+					let animation = CABasicAnimation(keyPath: animationKeyPath)
 					animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 					animation.fromValue = layer.cornerRadius
 					animation.toValue = originalCornerRadius
@@ -89,20 +121,22 @@ internal extension PushDownView where Self: UIView {
 		case .down:
 			transform = CGAffineTransform.identity.scaledBy(x: pushDownScale, y: pushDownScale)
 			originalBackgroundColor = backgroundColor
+            
 			if let color = pushDownBackgroundColor {
 				backgroundColor = color
 			}
+            
 			if pushDownRoundCorners {
 				originalCornerRadius = layer.cornerRadius
-				if originalCornerRadius < 8 {
+                if originalCornerRadius < pushedCornerRadius {
 					layer.masksToBounds = true
-					let animation = CABasicAnimation(keyPath: "cornerRadius")
+					let animation = CABasicAnimation(keyPath: animationKeyPath)
 					animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 					animation.fromValue = layer.cornerRadius
-					animation.toValue = 8
+                    animation.toValue = pushedCornerRadius
 					animation.duration = pushDownDuration
 					layer.add(animation, forKey: animation.keyPath)
-					layer.cornerRadius = 8
+					layer.cornerRadius = pushedCornerRadius
 				}
 			}
 		}
@@ -111,6 +145,9 @@ internal extension PushDownView where Self: UIView {
 
 // MARK: - UIButton
 
+/// `UIButton` that conforms to `PushDownView`
+/// Default `PushDownView` extension implementations allow `PushDownButton`
+/// to have push animations on pushdown and release.
 open class PushDownButton: UIButton, PushDownView {
 	@IBInspectable public var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
 	@IBInspectable public var pushDownScale: CGFloat = DefaultValues.pushDownScale
@@ -148,6 +185,9 @@ open class PushDownButton: UIButton, PushDownView {
 
 // MARK: - UITableViewCell
 
+/// `UITableViewCell` that conforms to `PushDownView`
+/// Default `PushDownView` extension implementations allow `PushDownTableViewCell`
+/// to have push animations on pushdown and release.
 open class PushDownTableViewCell: UITableViewCell, PushDownView {
 	@IBInspectable public var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
 	@IBInspectable public var pushDownScale: CGFloat = DefaultValues.pushDownScale
@@ -168,6 +208,9 @@ open class PushDownTableViewCell: UITableViewCell, PushDownView {
 
 // MARK: - UICollectionViewCell
 
+/// `UICollectionViewCell` that conforms to `PushDownView`
+/// Default `PushDownView` extension implementations allow `PushDownCollectionViewCell`
+/// to have push animations on pushdown and release.
 open class PushDownCollectionViewCell: UICollectionViewCell, PushDownView {
 	@IBInspectable public var pushDownDuration: TimeInterval = DefaultValues.pushDownDuration
 	@IBInspectable public var pushDownScale: CGFloat = DefaultValues.pushDownScale
@@ -186,4 +229,3 @@ open class PushDownCollectionViewCell: UICollectionViewCell, PushDownView {
 		}
 	}
 }
-
